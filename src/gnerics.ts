@@ -17,19 +17,6 @@ const rollNumber : GenericArray<number> = [2, 4,  5, 6]
 const isEligibleList : GenericArray<boolean> = [true, false]
 
 
-const sqrFunc = (value: number) => {
-    return value * value
-}
-
-sqrFunc(3)
-
-
-type Coordinates <X, Y> = [X, Y]
-
-const coordinates1: Coordinates<number, number> = [20, 40]
-
-const coordinates2: Coordinates<string, string> = ['30', '49']
-
 type User = {name:string, rollNo:number}
 
 const userList:GenericArray<User> = [
@@ -46,3 +33,17 @@ const userList:GenericArray<User> = [
         rollNo:3
     }
 ]
+
+
+// const sqrFunc = (value: number) => {
+//     return value * value
+// }
+
+// sqrFunc(3)
+
+
+// type Coordinates <X, Y> = [X, Y]
+
+// const coordinates1: Coordinates<number, number> = [20, 40]
+
+// const coordinates2: Coordinates<string, string> = ['30', '49']
