@@ -1,3 +1,4 @@
+// type assertion বা  type nerrow
 let anything : any;
 
 anything = 'anam';

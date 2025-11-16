@@ -30,7 +30,9 @@ const coordinates1: Coordinates<number, number> = [20, 40]
 
 const coordinates2: Coordinates<string, string> = ['30', '49']
 
-const userList:GenericArray<{name:string, rollNo:number}> = [
+type User = {name:string, rollNo:number}
+
+const userList:GenericArray<User> = [
     {
         name:'Mr.Z',
         rollNo:13

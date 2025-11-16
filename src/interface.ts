@@ -1,3 +1,5 @@
+//  ব্যাবহার এর ক্ষেত্রে  best হলো function, array = type alias 
+//    boject = type interface
 // type alias
 
 type User = {
