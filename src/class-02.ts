@@ -1,0 +1,146 @@
+//  #.interface #.extends #.Index Signature #.Array of Interface of interface
+
+/** ======================== 
+ * 1. Interface কি ?
+ */ 
+
+/**
+ * Interface হলো Typescript এ একটি object এর structure declare 
+ *  করার উপযোগী উপায় , এটি Typescript কে জানায় যে এই object কোন 
+ * কোন property থাকবে এবং property type কী হবে
+ * 
+ * 
+ * Object type হতে পারে : 
+ * Object 
+ * Array
+ * Function
+ */
+
+// ========== Example ====================
+
+interface User {
+    name:string;
+    age: number;
+    isAdmin?:boolean  // Optional property
+}
+
+const person: User = {
+    name: 'Anamol Hasan',
+    age:22
+}
+
+/**=================================
+ * 2. Interface extends example
+ ===================================*/
+
+ /**
+  * একটি basic interface কে আরেকটি interface extend করতে পারে
+  * মানে বড় করে  তৈরী করা যায়
+  */
+
+ interface Admin extends User {
+    role:string
+ }
+
+ const adminUser: Admin = {
+    name:'Anamol',
+    age:27,
+    role:'Super Admin',
+ }
+
+ /**
+  * Type Alias এ extends নেই, Type Alias এ একই  কাজ করতে গেলে
+  * intersection (&) ব্যবহার করতে হয় 
+  */
+
+ type UserType = {
+    name:string;
+    age:number;
+ }
+
+ type adminType = UserType & {
+    role:string
+ }
+
+ const admin2: adminType = {
+    name:'Anamol Hasan',
+    age:27,
+    role: 'Moderator'
+ }
+
+ /**================================
+  *  3. Index Signature
+==================================  */
+
+/**
+ * Interface দিয়ে Array declare করা যায় যাতে :
+ * index type থাকে
+ * value type থাকে
+ */
+
+interface MyArray {
+    [index:number]: string
+}
+
+const arr: MyArray = ['apple', 'banana', 'orange']
+console.log(arr)
+
+/**
+ * index -> number (0,1,2....)
+ * value -> string ('apple')
+ */
+
+/**======================
+ * 4. Function এর parameter এবং return type 
+ *    Interface দিয়ে define করা
+ ==================================*/
+
+ interface AddFn {
+    (a:number, b:number)
+ }
+
+ const add:AddFn = (x, y) => x + y
+
+ /**======================
+  * 5. Array of Interface
+  ===========================*/
+
+  interface User {
+    name:string;
+    age:number;
+  }
+
+  const user: User[] = [
+    {name: 'siam', age:22},
+    {name:'Rafi', age:25}
+  ]
+
+  /**প্রতিটি object User Interface অনুসরন করবে property missing 
+   * হলে Typescript error দিবে */
+
+//   ====================================
+// 6. Interface va type alias
+// =====================================
+
+/**
+ * 1. Syntax আলাদা :
+ *  Interface:
+ * interface User {
+ * name: string;
+ *  age:number;
+ *   }
+ * 
+ * Type Alias
+ * type User = {
+ *  name: string;
+ *  age: number;
+ * }
+ * 
+ * 2. Interface দিয়ে  Extend করা সহজ Type Alias এ extends নেই,
+ *   interface (&) ব্যবহার করতে হয়
+ */
+
+interface ArrInterface {
+    id:number;
+    name:string
+}
