@@ -1,4 +1,4 @@
-
+// Generic Function
 
 // const createArrayWithString = (value:string) => [value]
 
@@ -32,3 +32,24 @@ const res1 = createArrayTupleWithGeneric('Anam', false)
 
 const res2 = createArrayTupleWithGeneric(222,{name:'anam'})
 
+
+const addStudentToCourse = <T>(studentInfo: T) => {
+    return {
+        course: 'Next Level',
+        ...studentInfo
+    }
+}
+
+const student1 = {
+    id:243,
+    name:'Mezba',
+    hasPan:true
+}
+const student2 = {
+    id:253,
+    name:'Jankar Mahbub',
+    hasCar:true,
+    isMarried:true
+}
+
+const result = addStudentToCourse(student1)
